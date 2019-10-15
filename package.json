@@ -1,0 +1,10 @@
+{
+  "name": "cloud-invoicing",
+  "version": "1.0.0",
+  "description": "Invoicing app for the cloud",
+  "main": "index.js",
+  "repository": "git@github.com:Dereira/cloud-invoicing.git",
+  "author": "Daniel Pereira <daniel.pereira@mx1.com>",
+  "license": "MIT",
+  "private": false
+}
