@@ -2,11 +2,13 @@
   "name": "cloud-invoicing",
   "version": "1.0.0",
   "description": "Invoicing app for the cloud",
-  "main": "index.js",
   "repository": "git@github.com:Dereira/cloud-invoicing.git",
-  "author": "Daniel Pereira <daniel.pereira@mx1.com>",
+  "author": "Daniel Pereira <me@danielpereira.dev>",
   "license": "MIT",
   "private": false,
+  "workspaces": [
+    "packages/*"
+  ],
   "dependencies": {
     "@types/jest": "24.0.19",
     "@types/node": "12.7.12",
@@ -29,31 +31,17 @@
     "eslint-plugin-react-hooks": "^2.1.2",
     "eslint-plugin-react": "^7.16.0",
     "eslint": "^6.5.1",
+    "lerna": "^3.17.0",
     "prettier": "^1.18.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "yarn --cwd packages/app start",
+    "build": "yarn --cwd packages/app build",
+    "test": "lerna run test --stream",
+    "eject": "yarn --cwd packages/app eject",
     "prettier": "prettier --list-different \"**/*.{js,jsx,ts,tsx}\"",
     "prettier:fix": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
     "lint": "eslint ./packages/**/*.{ts,tsx}",
     "lint:fix": "eslint --fix ./packages/**/*.{ts,tsx}"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   }
 }
